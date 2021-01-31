@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>ChairMaker</title>
+  </head>
+  <body>
+    <div>
+      <div class="header">
+        <div class="logo">
+          <div
+            style="
+              background-color: #008cff;
+              width: 4vw;
+              height: 5vh;
+              border-radius: 10px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <h1 style="color: white">CM</h1>
+          </div>
+          <h2 style="text-align: left; color: #008cff; margin-left: 1vw">
+            ChairMaker
+          </h2>
+        </div>
+
+        <div
+          class="orderBtn"
+          style="
+            background-color: #008cff;
+            width: 4vw;
+            height: 4vh;
+            border-radius: 1vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <h4>Order</h4>
+        </div>
+      </div>
+      <div class="content">
+        <div class="mainContent">
+          <div class="select">
+            <select name="chairType" id="chairType">
+              <option value="" selected>Please select chair type...</option>
+              <option value="diningChair">Dining Chair</option>
+              <option value="stoolChair">Stool Chair</option>
+            </select>
+          </div>
+          <div id="squareForm" class="form" style="display: none">
+            <form action="/product_info.html" id="myForm">
+              <label for="pname">Product name:</label>
+              <input type="text" id="pname" name="pname" value="" required />
+
+              <label for="theight">Height (cm):</label>
+              <input
+                type="number"
+                id="theight"
+                name="theight"
+                value=""
+                required
+                min="1"
+              />
+
+              <label for="ttlength">Top length (cm):</label>
+              <input
+                type="number"
+                id="ttlength"
+                name="ttlength"
+                value=""
+                required
+                min="1"
+              />
+
+              <label for="ttlenght">Top width (cm):</label>
+              <input
+                type="number"
+                id="ttwidth"
+                name="ttwidth"
+                value=""
+                required
+                min="1"
+              />
+
+              <button type="submit" value="Submit">Submit</button>
+            </form>
+          </div>
+          <div id="roundForm" class="form" style="display: none">
+            <form action="/product_info.html" id="myForm">
+              <label for="pname">Product name:</label>
+              <input type="text" id="pname" name="pname" value="" required />
+
+              <label for="theight">Height (cm):</label>
+              <input
+                type="number"
+                id="theight"
+                name="theight"
+                value=""
+                required
+                min="1"
+              />
+
+              <label for="ttdiam">Top diameter (cm):</label>
+              <input
+                type="number"
+                id="ttdiam"
+                name="ttdiam"
+                value=""
+                required
+                min="1"
+              />
+
+              <button type="submit" value="Submit">Submit</button>
+            </form>
+          </div>
+          <p id="message"></p>
+        </div>
+        <div class="preview">Preview</div>
+      </div>
+    </div>
+  </body>
+  <script>
+    // Script for select box
+    var select = document.getElementById("chairType");
+    select.onchange = function () {
+      var squareForm = document.getElementById("squareForm");
+      var roundForm = document.getElementById("roundForm");
+      squareForm.style.display = this.value == "diningChair" ? "block" : "none";
+      roundForm.style.display = this.value == "stoolChair" ? "block" : "none";
+    };
+  </script>
+</html>

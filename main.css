@@ -1,0 +1,98 @@
+body {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  font-family: sans-serif;
+}
+
+h2 {
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 45vw;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1vh;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mainContent {
+  display: flex;
+  padding: 10px 8vw;
+  flex-direction: column;
+  min-width: fit-content;
+  background-color: #eee;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  min-width: fit-content;
+  background-color: #eee;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.preview {
+  width: 10vw;
+  height: 10vh;
+  background-color: aqua;
+  text-align: center;
+}
+
+.select {
+  display: flex;
+  width: auto;
+  margin: 10px 0px 20px 0px;
+}
+
+select {
+  height: 30px;
+  font-size: 15px;
+  border-color: #ccc;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+.form {
+  display: flex;
+}
+input {
+  display: flex;
+  height: 30px;
+  font-size: 20px;
+  border-color: #ccc;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  margin: 10px 0px;
+}
+
+button {
+  height: 40px;
+  width: 100px;
+  text-align: center;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 3px;
+  border-style: none;
+  background-color: rgb(3, 171, 81);
+  margin: 15px 0px;
+}
+
+button:hover {
+  background-color: rgb(1, 151, 71);
+}
