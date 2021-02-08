@@ -40,15 +40,17 @@ h2 {
   padding-top: 1vh;
   padding-bottom: 1vh;
   min-width: fit-content;
+  min-height: fit-content;
   background-color: #eee;
   border-radius: 10px;
   align-items: center;
 }
 
 .preview {
-  width: 10vw;
-  height: 10vh;
-  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 320px;
   text-align: center;
 }
 
