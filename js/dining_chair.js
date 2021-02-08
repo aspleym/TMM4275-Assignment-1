@@ -1,7 +1,7 @@
 import "./three.js";
 
-export function normal_chair(width, length, height) {
-  const material = new THREE.MeshBasicMaterial({ color: 0x999999 });
+export function dining_chair(width, length, height) {
+  const material = new THREE.MeshBasicMaterial({ color: 0x008cff });
   const legGeo = new THREE.BoxGeometry(length * 0.1, height, width * 0.1);
   const seatGeo = new THREE.BoxGeometry(length, height * 0.1, width);
   const backGeo = new THREE.BoxGeometry(length, height, width * 0.1);
@@ -31,10 +31,6 @@ export function normal_chair(width, length, height) {
   chair.add(leg4);
   chair.add(seat);
   chair.add(back);
-
-  const geometry2 = new THREE.BoxGeometry(0.2, 0.2, 0.2);
-  const material2 = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-  const cube = new THREE.Mesh(geometry2, material2);
 
   return chair;
 }

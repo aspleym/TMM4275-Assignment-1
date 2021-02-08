@@ -49,8 +49,12 @@ h2 {
 .preview {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  align-items: center;
+  background-color: white;
+  margin: 5px;
+  width: 210px;
   height: 320px;
+  border-radius: 5px;
   text-align: center;
 }
 
