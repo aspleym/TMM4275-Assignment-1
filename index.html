@@ -125,6 +125,7 @@
       </div>
     </div>
   </body>
+  <script src="js/three.js"></script>
   <script>
     // Script for select box
     var select = document.getElementById("chairType");
@@ -134,5 +135,41 @@
       squareForm.style.display = this.value == "diningChair" ? "block" : "none";
       roundForm.style.display = this.value == "stoolChair" ? "block" : "none";
     };
+
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(500, 500);
+    document.body.appendChild(renderer.domElement);
+
+    var update = function () {};
+    var render = function () {
+      renderer.render(scene, camera);
+    };
+
+    // CREATE A SHAPE
+    var geometry = new THREE.ConeGeometry(1, 2, 32);
+    var material = new THREE.MeshBasicMaterial({
+      color: 0xffff00,
+      wireframe: true,
+    });
+    var cone = new THREE.Mesh(geometry, material);
+
+    scene.add(cone);
+
+    camera.position.z = 3;
+
+    var loop = function () {
+      requestAnimationFrame(loop);
+      update();
+      render();
+    };
+
+    loop();
   </script>
 </html>
