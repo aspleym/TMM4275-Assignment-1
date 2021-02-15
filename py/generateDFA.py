@@ -35,7 +35,7 @@ def generateSquareTable(pname):
     f.close()
 
 
-def generateRoundTable(pname):
+def generateStool(pname):
     # Definings a http request for getting a specific round table
     headers = {
         'Accept': 'application/sparql-results+json,*/*;q=0.9',
@@ -50,7 +50,7 @@ def generateRoundTable(pname):
                              headers=headers, data=data)
 
     data = response.json()
-    f = open("./roundTable.dfa", "r")
+    f = open("/products/templates/roundTable.dfa", "r")
     txt = f.read()
 
     h_param = data['results']['bindings'][0]['ttHeight']['value']

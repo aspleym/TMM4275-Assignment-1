@@ -52,9 +52,10 @@
               <option value="" selected>Please select chair type...</option>
               <option value="diningChair">Dining Chair</option>
               <option value="stoolChair">Stool Chair</option>
+              <option value="modernChair">Modern Chair</option>
             </select>
           </div>
-          <div id="squareForm" class="form" style="display: none">
+          <div id="diningForm" class="form" style="display: none">
             <form action="/ChairMaker/order.html" id="myForm" method="POST">
               <label for="pname">Product name:</label>
               <input type="text" id="pname" name="pname" value="" required />
@@ -92,8 +93,8 @@
               <button type="submit" value="Submit">Submit</button>
             </form>
           </div>
-          <div id="roundForm" class="form" style="display: none">
-            <form action="/order.html" id="myForm">
+          <div id="stoolForm" class="form" style="display: none">
+            <form action="/ChairMaker/order.html" id="myForm" method="POST">
               <label for="pname">Product name:</label>
               <input type="text" id="pname" name="pname" value="" required />
 
@@ -120,6 +121,44 @@
               <button type="submit" value="Submit">Submit</button>
             </form>
           </div>
+          <div id="modernForm" class="form" style="display: none">
+            <form action="/ChairMaker/order.html" id="myForm" method="POST">
+              <label for="pname">Product name:</label>
+              <input type="text" id="pname" name="pname" value="" required />
+
+              <label for="theight">Height (cm):</label>
+              <input
+                type="number"
+                id="theight"
+                name="theight"
+                value="100"
+                required
+                min="1"
+              />
+
+              <label for="ttlength">Top length (cm):</label>
+              <input
+                type="number"
+                id="ttlength"
+                name="ttlength"
+                value="100"
+                required
+                min="1"
+              />
+
+              <label for="ttlenght">Top width (cm):</label>
+              <input
+                type="number"
+                id="ttwidth"
+                name="ttwidth"
+                value="100"
+                required
+                min="1"
+              />
+
+              <button type="submit" value="Submit">Submit</button>
+            </form>
+          </div>
           <p id="message"></p>
         </div>
         <div class="preview" id="preview">Preview</div>
@@ -130,10 +169,12 @@
     // Script for select box
     var select = document.getElementById("chairType");
     select.onchange = function () {
-      var squareForm = document.getElementById("squareForm");
-      var roundForm = document.getElementById("roundForm");
-      squareForm.style.display = this.value == "diningChair" ? "block" : "none";
-      roundForm.style.display = this.value == "stoolChair" ? "block" : "none";
+      var diningForm = document.getElementById("diningForm");
+      var stoolForm = document.getElementById("stoolForm");
+      var modernForm = document.getElementById("modernForm");
+      diningForm.style.display = this.value == "diningChair" ? "block" : "none";
+      stoolForm.style.display = this.value == "stoolChair" ? "block" : "none";
+      modernForm.style.display = this.value == "modernChair" ? "block" : "none";
     };
   </script>
 </html>

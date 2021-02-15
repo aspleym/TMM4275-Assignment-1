@@ -22,20 +22,29 @@
     
 
 
+    <!-- http://www.my-kbe.com/shapes.owl#back -->
+
+    <owl:ObjectProperty rdf:about="http://www.my-kbe.com/shapes.owl#back">
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#DiningChair"/>
+        <rdfs:range rdf:resource="http://www.my-kbe.com/shapes.owl#Block"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.my-kbe.com/shapes.owl#leg -->
 
     <owl:ObjectProperty rdf:about="http://www.my-kbe.com/shapes.owl#leg">
-        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#Table"/>
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#DiningChair"/>
         <rdfs:range rdf:resource="http://www.my-kbe.com/shapes.owl#Block"/>
         <rdfs:range rdf:resource="http://www.my-kbe.com/shapes.owl#Cylinder"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.my-kbe.com/shapes.owl#tableTop -->
+    <!-- http://www.my-kbe.com/shapes.owl#seat -->
 
-    <owl:ObjectProperty rdf:about="http://www.my-kbe.com/shapes.owl#tableTop">
-        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#Table"/>
+    <owl:ObjectProperty rdf:about="http://www.my-kbe.com/shapes.owl#seat">
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#DiningChair"/>
         <rdfs:range rdf:resource="http://www.my-kbe.com/shapes.owl#Block"/>
         <rdfs:range rdf:resource="http://www.my-kbe.com/shapes.owl#Cylinder"/>
     </owl:ObjectProperty>
@@ -145,6 +154,14 @@
     
 
 
+    <!-- http://www.my-kbe.com/shapes.owl#DiningChair -->
+
+    <owl:Class rdf:about="http://www.my-kbe.com/shapes.owl#DiningChair">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.my-kbe.com/shapes.owl#Sphere -->
 
     <owl:Class rdf:about="http://www.my-kbe.com/shapes.owl#Sphere">
@@ -153,11 +170,58 @@
     
 
 
-    <!-- http://www.my-kbe.com/shapes.owl#Table -->
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-    <owl:Class rdf:about="http://www.my-kbe.com/shapes.owl#Table">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </owl:Class>
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#TestChair -->
+
+    <owl:NamedIndividual rdf:about="http://www.my-kbe.com/shapes.owl#TestChair">
+        <rdf:type rdf:resource="http://www.my-kbe.com/shapes.owl#DiningChair"/>
+        <back rdf:resource="http://www.my-kbe.com/shapes.owl#back1"/>
+        <leg rdf:resource="http://www.my-kbe.com/shapes.owl#leg1"/>
+        <seat rdf:resource="http://www.my-kbe.com/shapes.owl#seat1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#back1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.my-kbe.com/shapes.owl#back1">
+        <rdf:type rdf:resource="http://www.my-kbe.com/shapes.owl#Block"/>
+        <hasHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</hasHeight>
+        <hasLength rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</hasLength>
+        <hasWidth rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</hasWidth>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#leg1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.my-kbe.com/shapes.owl#leg1">
+        <rdf:type rdf:resource="http://www.my-kbe.com/shapes.owl#Block"/>
+        <hasHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</hasHeight>
+        <hasLength rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</hasLength>
+        <hasWidth rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</hasWidth>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#seat1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.my-kbe.com/shapes.owl#seat1">
+        <rdf:type rdf:resource="http://www.my-kbe.com/shapes.owl#Block"/>
+        <hasHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</hasHeight>
+        <hasLength rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</hasLength>
+        <hasWidth rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</hasWidth>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 

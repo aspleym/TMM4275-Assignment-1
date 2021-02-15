@@ -5,26 +5,41 @@ DefClass:<P_NAME> (%ug_create_instance ug_base_part);
 (Number Parameter) leg_side: 50;
 (Number Parameter) leg_height: <LH_PARAM> * 10;
 
-# Top parameters
-(Number Parameter) top_height: <H_PARAM> * 10;
-(Number Parameter) top_width: <W_PARAM> * 10;
-(Number Parameter) top_length: <L_PARAM> * 10;
+# Seat parameters
+(Number Parameter) seat_height: <H_PARAM> * 10;
+(Number Parameter) seat_width: <W_PARAM> * 10;
+(Number Parameter) seat_length: <L_PARAM> * 10;
 
-(Number) adjusted_length: top_length: - leg_side:;
-(Number) adjusted_width: top_width: - leg_side:;
+# Back parameters
+(Number Parameter) back_height: <BH_PARAM> * 10;
+(Number Parameter) back_width: seat_width:;
+(Number Parameter) back_length: 50 * 10;
+
+(Number) adjusted_length: seat_length: - leg_side:;
+(Number) adjusted_width: seat_width: - leg_side:;
 
 # Basic building elements to form a structure
 # Generate legs
 (List) children: children() + {list1:};
 
-# The top
-(Child) top: 
+# The seat
+(Child) seat: 
 {
     class, ug_block;
-    length, top_length:;
-    width, top_width:;
-    height, top_height:;
-    Origin, Point(0,0,leg_height:);
+    length, seat_length:;
+    width, seat_width:;
+    height, seat_height:;
+    Origin, Point(0, 0, leg_height:);
+};
+
+# The back
+(Child) back:
+{
+  class, ug_block;
+  length, back_length:;
+  width, back_width:;
+  height, back_height:;
+  Origin, Point(0, 0, leg_height: + seat_height:);
 };
 
 #Loop to generate the list of buttons holes to cut off from the disk.

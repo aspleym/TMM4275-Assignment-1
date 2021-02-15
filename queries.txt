@@ -1,0 +1,21 @@
+#Get DiningChairs
+
+PREFIX kbe:<http://www.my-kbe.com/shapes.owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT *
+WHERE
+{
+?chair a kbe:DiningChair.
+?chair kbe:leg ?leg.
+?leg kbe:hasHeight ?legHeight.
+  ?leg kbe:hasWidth ?legWidth.
+  ?leg kbe:hasLength ?legLength.
+?chair kbe:back ?back.
+  ?back kbe:hasHeight ?backHeight.
+  ?back kbe:hasWidth ?backWidth.
+  ?back kbe:hasLength ?backLength.
+?chair kbe:seat ?seat.
+  ?seat kbe:hasHeight ?seatHeight.
+  ?seat kbe:hasWidth ?seatWidth.
+  ?seat kbe:hasLength ?seatLength.
+}
