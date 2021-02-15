@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.my-kbe.com/shapes.owl#"
+     xml:base="http://www.my-kbe.com/shapes.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:shapes="http://www.my-kbe.com/shapes.owl#">
+    <owl:Ontology rdf:about="http://www.my-kbe.com/shapes.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#leg -->
+
+    <owl:ObjectProperty rdf:about="http://www.my-kbe.com/shapes.owl#leg">
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#Table"/>
+        <rdfs:range rdf:resource="http://www.my-kbe.com/shapes.owl#Block"/>
+        <rdfs:range rdf:resource="http://www.my-kbe.com/shapes.owl#Cylinder"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#tableTop -->
+
+    <owl:ObjectProperty rdf:about="http://www.my-kbe.com/shapes.owl#tableTop">
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#Table"/>
+        <rdfs:range rdf:resource="http://www.my-kbe.com/shapes.owl#Block"/>
+        <rdfs:range rdf:resource="http://www.my-kbe.com/shapes.owl#Cylinder"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#hasDiameter -->
+
+    <owl:DatatypeProperty rdf:about="http://www.my-kbe.com/shapes.owl#hasDiameter">
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#Cylinder"/>
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#Sphere"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#hasHeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.my-kbe.com/shapes.owl#hasHeight">
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#Block"/>
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#Cylinder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#hasLength -->
+
+    <owl:DatatypeProperty rdf:about="http://www.my-kbe.com/shapes.owl#hasLength">
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#Block"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#hasRadius -->
+
+    <owl:DatatypeProperty rdf:about="http://www.my-kbe.com/shapes.owl#hasRadius">
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#Cylinder"/>
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#Sphere"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#hasSide -->
+
+    <owl:DatatypeProperty rdf:about="http://www.my-kbe.com/shapes.owl#hasSide">
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#Cube"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#hasWidth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.my-kbe.com/shapes.owl#hasWidth">
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#Block"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#Block -->
+
+    <owl:Class rdf:about="http://www.my-kbe.com/shapes.owl#Block">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#Cube -->
+
+    <owl:Class rdf:about="http://www.my-kbe.com/shapes.owl#Cube">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#Cylinder -->
+
+    <owl:Class rdf:about="http://www.my-kbe.com/shapes.owl#Cylinder">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#Sphere -->
+
+    <owl:Class rdf:about="http://www.my-kbe.com/shapes.owl#Sphere">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#Table -->
+
+    <owl:Class rdf:about="http://www.my-kbe.com/shapes.owl#Table">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

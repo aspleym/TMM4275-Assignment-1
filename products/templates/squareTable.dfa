@@ -1,0 +1,49 @@
+#! NX/KF 4.0
+DefClass:<P_NAME> (%ug_create_instance ug_base_part);
+# Set of default parameters for the part
+# Leg parameters
+(Number Parameter) leg_side: 50;
+(Number Parameter) leg_height: <LH_PARAM> * 10;
+
+# Top parameters
+(Number Parameter) top_height: <H_PARAM> * 10;
+(Number Parameter) top_width: <W_PARAM> * 10;
+(Number Parameter) top_length: <L_PARAM> * 10;
+
+(Number) adjusted_length: top_length: - leg_side:;
+(Number) adjusted_width: top_width: - leg_side:;
+
+# Basic building elements to form a structure
+# Generate legs
+(List) children: children() + {list1:};
+
+# The top
+(Child) top: 
+{
+    class, ug_block;
+    length, top_length:;
+    width, top_width:;
+    height, top_height:;
+    Origin, Point(0,0,leg_height:);
+};
+
+#Loop to generate the list of buttons holes to cut off from the disk.
+(list) list1: loop
+{
+  for $x in {0, adjusted_length:}; # Coodinates for X hardcoded
+  collect loop {
+      for $y in {0, adjusted_width:}; # Coordinates for Y hardcoded
+      for $pt is Point($x,$y,0);
+      append {ug_createInstance(
+      {
+            class, ug_block;
+            length, leg_side:;
+            width, leg_side:;
+            height, leg_height:;
+            Origin, $pt; 
+            Direction, Vector(0,0,1);
+      })};
+  };
+};
+
+

@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="/ChairMaker/main.css" />
     <title>ChairMaker</title>
   </head>
   <body>
-    <script type="module" src="./js/preview.js"></script>
+    <script type="module" src="/ChairMaker/js/preview.js"></script>
     <div>
       <div class="header">
         <div class="logo">
@@ -55,7 +55,7 @@
             </select>
           </div>
           <div id="squareForm" class="form" style="display: none">
-            <form action="/product_info.html" id="myForm">
+            <form action="/ChairMaker/order.html" id="myForm" method="POST">
               <label for="pname">Product name:</label>
               <input type="text" id="pname" name="pname" value="" required />
 
@@ -93,7 +93,7 @@
             </form>
           </div>
           <div id="roundForm" class="form" style="display: none">
-            <form action="/product_info.html" id="myForm">
+            <form action="/order.html" id="myForm">
               <label for="pname">Product name:</label>
               <input type="text" id="pname" name="pname" value="" required />
 
@@ -135,6 +135,5 @@
       squareForm.style.display = this.value == "diningChair" ? "block" : "none";
       roundForm.style.display = this.value == "stoolChair" ? "block" : "none";
     };
-
   </script>
 </html>
