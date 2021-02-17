@@ -2,16 +2,16 @@
 DefClass:<P_NAME> (%ug_create_instance ug_base_part);
 # Set of default parameters for the part
 # Leg parameters
-(Number Parameter) leg_diameter: <LD_PARAM> * 10;
-(Number Parameter) leg_height: <LH_PARAM> * 10;
+(Number Parameter) leg_diameter: <LEG_DIAMETER> * 10;
+(Number Parameter) leg_height: <LEG_HEIGHT> * 10;
 
 # Leg bottom parameters
-(Number Parameter) leg_b_diameter: <LBD_PARAM> * 10;
-(Number Parameter) leg_b_height: <LBH_PARAM> * 10;
+(Number Parameter) leg_b_diameter: <LEG_BOTTOM_DIAMETER> * 10;
+(Number Parameter) leg_b_height: <LEG_BOTTOM_HEIGHT> * 10;
 
 # Seat parameters
-(Number Parameter) seat_height: <H_PARAM> * 10;
-(Number Parameter) seat_diameter: <D_PARAM> * 10;
+(Number Parameter) seat_height: <SEAT_HEIGHT> * 10;
+(Number Parameter) seat_diameter: <SEAT_DIAMETER> * 10;
 
 # Basic building elements to form a structure
 # The seat

@@ -58,6 +58,18 @@ h2 {
   text-align: center;
 }
 
+.wireframe {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+}
+
+#wireframe {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
 .select {
   display: flex;
   width: auto;
@@ -95,10 +107,10 @@ button {
   color: #fff;
   border-radius: 3px;
   border-style: none;
-  background-color: rgb(3, 171, 81);
+  background-color: #008cff;
   margin: 15px 0px;
 }
 
 button:hover {
-  background-color: rgb(1, 151, 71);
+  background-color: #109cff;
 }

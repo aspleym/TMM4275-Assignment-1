@@ -1,21 +1,150 @@
-#Get DiningChairs
+#GET DiningChairs
+  PREFIX kbe:<http://www.my-kbe.com/shapes.owl#>
+  PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+  SELECT *
+  WHERE
+  {
+  ?chair a kbe:DiningChair.
+  ?chair kbe:leg ?leg.
+  ?leg kbe:hasHeight ?legHeight.
+    ?leg kbe:hasWidth ?legWidth.
+    ?leg kbe:hasLength ?legLength.
+  ?chair kbe:back ?back.
+    ?back kbe:hasHeight ?backHeight.
+    ?back kbe:hasWidth ?backWidth.
+    ?back kbe:hasLength ?backLength.
+  ?chair kbe:seat ?seat.
+    ?seat kbe:hasHeight ?seatHeight.
+    ?seat kbe:hasWidth ?seatWidth.
+    ?seat kbe:hasLength ?seatLength.
+  }
 
-PREFIX kbe:<http://www.my-kbe.com/shapes.owl#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-SELECT *
-WHERE
-{
-?chair a kbe:DiningChair.
-?chair kbe:leg ?leg.
-?leg kbe:hasHeight ?legHeight.
-  ?leg kbe:hasWidth ?legWidth.
-  ?leg kbe:hasLength ?legLength.
-?chair kbe:back ?back.
-  ?back kbe:hasHeight ?backHeight.
-  ?back kbe:hasWidth ?backWidth.
-  ?back kbe:hasLength ?backLength.
-?chair kbe:seat ?seat.
-  ?seat kbe:hasHeight ?seatHeight.
-  ?seat kbe:hasWidth ?seatWidth.
-  ?seat kbe:hasLength ?seatLength.
-}
+#POST DiningChair
+  PREFIX kbe:<http://www.my-kbe.com/shapes.owl#>
+  PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+  PREFIX owl: <http://www.w3.org/2002/07/owl#>
+  INSERT
+  {
+  kbe:dChair_100  a        owl:NamedIndividual , kbe:DiningChair ;
+          kbe:leg       kbe:dChair_100_leg ;
+        kbe:back	kbe:dChair_100_back;
+          kbe:seat  kbe:dChair_100_seat .
+
+  kbe:dChair_100_leg  a           owl:NamedIndividual , kbe:Block ;
+          kbe:hasHeight  "100.0"^^xsd:float ;
+          kbe:hasLength  "10.0"^^xsd:float ;
+          kbe:hasWidth   "10.0"^^xsd:float .
+
+  kbe:dChair_100_back  a      owl:NamedIndividual , kbe:Block ;
+          kbe:hasHeight  "100.0"^^xsd:float ;
+          kbe:hasLength  "10.0"^^xsd:float ;
+          kbe:hasWidth   "100.0"^^xsd:float .
+
+  kbe:dChair_100_seat  a      owl:NamedIndividual , kbe:Block ;
+          kbe:hasHeight  "10.0"^^xsd:float ;
+          kbe:hasLength  "100.0"^^xsd:float ;
+          kbe:hasWidth   "100.0"^^xsd:float .
+
+  }
+  where {}
+
+#POST StoolChair
+  PREFIX kbe:<http://www.my-kbe.com/shapes.owl#>
+  PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+  PREFIX owl: <http://www.w3.org/2002/07/owl#>
+  INSERT
+  {
+  kbe:sChair_100  a        owl:NamedIndividual , kbe:StoolChair ;
+          kbe:leg       kbe:sChair_100_leg;
+        kbe:bottomleg	kbe:sChair_100_bottomleg;
+          kbe:seat  kbe:sChair_100_seat .
+
+  kbe:sChair_100_leg  a           owl:NamedIndividual , kbe:Cylinder ;
+          kbe:hasHeight  "100.0"^^xsd:float ;
+          kbe:hasDiameter  "10.0"^^xsd:float .
+    
+  kbe:sChair_100_bottomleg  a           owl:NamedIndividual , kbe:Cylinder ;
+          kbe:hasHeight  "10.0"^^xsd:float ;
+          kbe:hasDiameter  "50.0"^^xsd:float .
+
+  kbe:sChair_100_seat  a      owl:NamedIndividual , kbe:Cylinder ;
+          kbe:hasHeight  "10.0"^^xsd:float ;
+          kbe:hasDiameter  "100.0"^^xsd:float .
+  }
+  where {}
+
+#POST ModernChair
+  PREFIX kbe:<http://www.my-kbe.com/shapes.owl#>
+  PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+  PREFIX owl: <http://www.w3.org/2002/07/owl#>
+  INSERT
+  {
+  kbe:mChair_200  a        owl:NamedIndividual , kbe:ModernChair ;
+          kbe:leg       kbe:mChair_100_leg ;
+        kbe:back	kbe:mChair_100_back;
+          kbe:seat  kbe:mChair_100_seat .
+
+  kbe:mChair_100_leg  a           owl:NamedIndividual , kbe:Block ;
+          kbe:hasHeight  "100.0"^^xsd:float ;
+          kbe:hasLength  "10.0"^^xsd:float ;
+          kbe:hasWidth   "10.0"^^xsd:float .
+
+  kbe:mChair_100_back  a      owl:NamedIndividual , kbe:Block ;
+          kbe:hasHeight  "100.0"^^xsd:float ;
+          kbe:hasLength  "10.0"^^xsd:float ;
+          kbe:hasWidth   "100.0"^^xsd:float .
+
+  kbe:mChair_100_seat  a      owl:NamedIndividual , kbe:Block ;
+          kbe:hasHeight  "10.0"^^xsd:float ;
+          kbe:hasLength  "100.0"^^xsd:float ;
+          kbe:hasWidth   "100.0"^^xsd:float .
+
+  }
+  where {}
+
+# SEARCH DiningChair
+  PREFIX kbe:<http://www.my-kbe.com/shapes.owl#>
+  PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+  PREFIX owl: <http://www.w3.org/2002/07/owl#>
+  SELECT *
+  WHERE
+  {
+  ?dChair a kbe:DiningChair.
+  ?dChair kbe:leg ?leg.
+  ?leg kbe:hasHeight ?leg_height.
+    ?leg kbe:hasWidth ?leg_width.
+    ?leg kbe:hasLength ?leg_length.
+  ?dChair kbe:seat ?seat.
+    ?seat kbe:hasWidth ?seat_width.
+    ?seat kbe:hasHeight ?seat_height.
+    ?seat kbe:hasLength ?seat_length.
+  ?dChair kbe:back ?back.
+    ?back kbe:hasWidth ?back_width.
+    ?back kbe:hasHeight ?back_height.
+    ?back kbe:hasLength ?back_length.
+
+    
+    FILTER(?dChair = kbe:dChair_100).
+  }
+
+# SEARCH StoolChair
+  PREFIX kbe:<http://www.my-kbe.com/shapes.owl#>
+  PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+  PREFIX owl: <http://www.w3.org/2002/07/owl#>
+  SELECT *
+  WHERE
+  {
+  ?sChair a kbe:StoolChair.
+  ?sChair kbe:leg ?leg.
+  	?leg kbe:hasHeight ?leg_height.
+    ?leg kbe:hasDiameter ?leg_diameter.
+  ?sChair kbe:seat ?seat.
+    ?seat kbe:hasHeight ?seat_height.
+    ?seat kbe:hasDiameter ?seat_diameter.
+  ?sChair kbe:bottomleg ?leg_bottom.
+    ?leg_bottom kbe:hasHeight ?leg_bottom_height.
+    ?leg_bottom kbe:hasDiameter ?leg_bottom_diameter.
+
+    
+    FILTER(?sChair = kbe:sChair_100).
+  }

@@ -1,73 +1,89 @@
 import http.server
+from py.generateDFA import generateDiningChair, generateStoolChair, generateModernChair
+from py.fusekiposter import postDiningChair, postModernChair, postStoolChair
 import socketserver
+
+IP_NUMBER = '127.0.0.1'
+PORT_NUMBER = 8080
 
 
 class MyRequestHandler(http.server.SimpleHTTPRequestHandler):
-    data = ""
+
     def do_GET(self):
         # Redirects to main page
         if self.path == '/':
             self.path = '/ChairMaker/index.html'
-        # Redirects to product_info page
-        elif (self.path.find("/ChairMaker/product_info.html") != -1):
-            # Parse parameters
+        # Response to order.html http request
+        elif self.path.find('/info') != -1:
+            # Get chair name from url param
             split_by_q = self.path.split("?")
             param_str = split_by_q[1]
-            key_value_pairs = param_str.split("&")
-            # Check if the customer want a round or square table
-            if (key_value_pairs[2].split("=")[0] == 'ttdiam'):
-                p1 = key_value_pairs[0].split("=")
-                p2 = key_value_pairs[1].split("=")
-                p3 = key_value_pairs[2].split("=")
-                pname = p1[1].replace("+", "_")
-                theight = p2[1]
-                ttdiam = p3[1]
-                # Post table to fuseki
-                print(pname)
-                response = 1  # postRoundTable(pname, theight, ttdiam)
-                # Check if fuseki posted successfully
-                if (response == 200):
-                    # Generate a DFA-file
-                    # generateRoundTable(pname)
-                    print("tull")
-                else:
-                    # Display the error page
-                    self.path = '/ChairMaker/error.html'
-            else:
-                # Parse parameters
-                p1 = key_value_pairs[0].split("=")
-                p2 = key_value_pairs[1].split("=")
-                p3 = key_value_pairs[2].split("=")
-                p4 = key_value_pairs[3].split("=")
-                pname = p1[1].replace("+", "_")
-                theight = p2[1]
-                ttlength = p3[1]
-                ttwidth = p4[1]
-                # Post table to fuseki
-                # postSquareTable(pname, theight, ttlength, ttwidth)
-                response = 1
-                # Check if fuseki posted successfully
-                if (response == 200):
-                    # Generate a DFA-file
-                    # generateSquareTable(pname)
-                    print("rull")
-                else:
-                    # Display the error page
-                    self.path = '/ChairMaker/error.html'
 
+            parameters = param_str.split("&")
+            pname = parameters[0]
+            chairType = parameters[1]
+
+            data = ""
+
+            if (chairType == "diningChair"):
+                data = generateDiningChair(pname)
+            elif (chairType == "stoolChair"):
+                data = generateStoolChair(pname)
+            elif (chairType == "modernChair"):
+                data = generateModernChair(pname)
+
+            self.send_response(200)
+            self.send_header("Content-type", "text/plain; charset=utf-8")
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+
+            self.wfile.write(bytes(data, "utf-8"))
+            return None
         return http.server.SimpleHTTPRequestHandler.do_GET(self)
 
     def do_POST(self):
         content_len = int(self.headers['Content-Length'])
         post_body = self.rfile.read(content_len)
-        self.data = post_body
-        print(post_body)
+        self.path = '/ChairMaker/order.html?test'
+
+        post_string = post_body.decode('utf-8')
+        parameters = post_string.split("&")
+        chairType = parameters[0].split("=")[0]
+
+        if (chairType == "dCName"):
+            # DINING
+            pname = parameters[0].split("=")[1]
+            width = parameters[3].split("=")[1]
+            length = parameters[2].split("=")[1]
+            height = parameters[1].split("=")[1]
+
+            response = postDiningChair(pname, float(
+                width), float(length), float(height))
+
+        elif (chairType == "sCName"):
+            # STOOL
+            print(parameters)
+            pname = parameters[0].split("=")[1]
+            diameter = parameters[2].split("=")[1]
+            height = parameters[1].split("=")[1]
+
+            response = postStoolChair(pname, float(diameter), float(height))
+        elif (chairType == "mCName"):
+            # MODERN
+            pname = parameters[0].split("=")[1]
+            width = parameters[3].split("=")[1]
+            length = parameters[2].split("=")[1]
+            height = parameters[1].split("=")[1]
+
+            response = postModernChair(pname, float(
+                width), float(length), float(height))
+
         return http.server.SimpleHTTPRequestHandler.do_GET(self)
 
 
 Handler = MyRequestHandler
 # Set server to localhost and port 8080
-server = socketserver.TCPServer(('127.0.0.1', 8080), Handler)
+server = socketserver.TCPServer((IP_NUMBER, PORT_NUMBER), Handler)
 
 try:
     server.serve_forever()

@@ -3,23 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/ChairMaker/order.css" />
     <title>Document</title>
   </head>
   <body>
-    <h1>Order complete</h1>
+    <script src="js/order.js" type="module"></script>
+    <div class="content">
+      <div class="info">
+        <h1>Order complete</h1>
+        <h2 id="message"></h2>
+        <a id="DFA" href="" download=""> Click to downlaod DFA file </a>
+      </div>
+      <div class="orderview" id="orderview">Preview</div>
+    </div>
   </body>
-  <script>
-    window.onload = function() {
-      var request = new XMLHttpRequest();
-
-      request.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-              console.log(this.responseText);
-          }
-      };
-
-      request.open('GET', 'http://localhost:8080/');
-      request.send();
-    }
-    </script>
 </html>

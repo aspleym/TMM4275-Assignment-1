@@ -26,7 +26,18 @@
 
     <owl:ObjectProperty rdf:about="http://www.my-kbe.com/shapes.owl#back">
         <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#DiningChair"/>
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#ModernChair"/>
         <rdfs:range rdf:resource="http://www.my-kbe.com/shapes.owl#Block"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#bottomleg -->
+
+    <owl:ObjectProperty rdf:about="http://www.my-kbe.com/shapes.owl#bottomleg">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#StoolChair"/>
+        <rdfs:range rdf:resource="http://www.my-kbe.com/shapes.owl#Cylinder"/>
     </owl:ObjectProperty>
     
 
@@ -35,6 +46,8 @@
 
     <owl:ObjectProperty rdf:about="http://www.my-kbe.com/shapes.owl#leg">
         <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#DiningChair"/>
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#ModernChair"/>
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#StoolChair"/>
         <rdfs:range rdf:resource="http://www.my-kbe.com/shapes.owl#Block"/>
         <rdfs:range rdf:resource="http://www.my-kbe.com/shapes.owl#Cylinder"/>
     </owl:ObjectProperty>
@@ -45,6 +58,8 @@
 
     <owl:ObjectProperty rdf:about="http://www.my-kbe.com/shapes.owl#seat">
         <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#DiningChair"/>
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#ModernChair"/>
+        <rdfs:domain rdf:resource="http://www.my-kbe.com/shapes.owl#StoolChair"/>
         <rdfs:range rdf:resource="http://www.my-kbe.com/shapes.owl#Block"/>
         <rdfs:range rdf:resource="http://www.my-kbe.com/shapes.owl#Cylinder"/>
     </owl:ObjectProperty>
@@ -162,9 +177,25 @@
     
 
 
+    <!-- http://www.my-kbe.com/shapes.owl#ModernChair -->
+
+    <owl:Class rdf:about="http://www.my-kbe.com/shapes.owl#ModernChair">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.my-kbe.com/shapes.owl#Sphere -->
 
     <owl:Class rdf:about="http://www.my-kbe.com/shapes.owl#Sphere">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.my-kbe.com/shapes.owl#StoolChair -->
+
+    <owl:Class rdf:about="http://www.my-kbe.com/shapes.owl#StoolChair">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     </owl:Class>
     

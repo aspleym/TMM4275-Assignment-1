@@ -1,18 +1,22 @@
-import "./three.js";
+//import "./three.js";
 
-export function stool_chair(diam, height) {
-  const material = new THREE.MeshBasicMaterial({ color: 0x008cff });
-  const seatGeo = new THREE.CylinderGeometry(diam, diam, height / 10, 64);
+export function stool_chair(diam, height, wireframe) {
+  const radius = diam / 2;
+  const material = new THREE.MeshStandardMaterial({
+    color: 0x008cff,
+    wireframe: wireframe,
+  });
+  const seatGeo = new THREE.CylinderGeometry(radius, radius, height * 0.1, 64);
   const legGeo = new THREE.CylinderGeometry(
-    (diam * 2) / 6,
-    (diam * 2) / 6,
-    height,
+    radius * 0.3,
+    radius * 0.3,
+    height * 0.8,
     64
   );
   const bottomGeo = new THREE.CylinderGeometry(
-    (diam * 2) / 3,
-    (diam * 2) / 3,
-    height / 12,
+    radius * 0.7,
+    radius * 0.7,
+    height * 0.1,
     64
   );
 
@@ -20,9 +24,13 @@ export function stool_chair(diam, height) {
   const seat = new THREE.Mesh(seatGeo, material);
   const bottom = new THREE.Mesh(bottomGeo, material);
 
-  leg.position.set(0, height / 2 + height / 12, 0);
-  bottom.position.set(0, height / 24, 0);
-  seat.position.set(0, (height * 27) / 24, 0);
+  leg.castShadow = true;
+  seat.castShadow = true;
+  bottom.castShadow = true;
+
+  leg.position.set(0, height * 0.45, 0);
+  bottom.position.set(0, height * 0.05, 0);
+  seat.position.set(0, height * 0.9, 0);
 
   const chair = new THREE.Group();
 
