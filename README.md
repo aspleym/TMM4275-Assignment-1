@@ -150,6 +150,7 @@ TMM4275-Assignment-1
 │
 ├───images					Images for the README.
 │       Client-server architecture.png
+│	Sequence diagram.png
 │       ui.png
 │
 ├───products					A folder to store chair DFA files.
