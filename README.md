@@ -40,7 +40,7 @@ You have founded a company implementing KBE systems for various manufacturers. T
 
 ### Built With
 
-Everyone that contributed to the project used Visual Studio Code to develop this software. The next section has a list of libraries and applications that have been used in this project. The names are linked to one of the developers home page for the library.
+Everyone that contributed to the project used [Visual Studio Code](https://code.visualstudio.com/) to develop this software. The next section has a list of libraries and applications that have been used in this project. The names are linked to one of the developers home page for the library.
 
 #### Libraries
 
