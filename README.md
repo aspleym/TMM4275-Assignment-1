@@ -25,6 +25,7 @@
   - [Download project](#download-project)
   - [Run the system](#run-the-system)
 - [Usage](#usage)
+- [Examples](#examples)
 - [Roadmap](#roadmap)
 - [File Structure](#file-structure)
 - [Contributors](#contributors)
@@ -41,7 +42,7 @@ You have founded a company implementing KBE systems for various manufacturers. T
 
 ![image of sequence diagram](https://github.com/aspleym/TMM4275-Assignment-1/blob/main/images/Sequence%20diagram.png)
 
-### Built With
+## Built With
 
 Everyone that contributed to the project used [Visual Studio Code](https://code.visualstudio.com/) to develop this software. The next section has a list of libraries and applications that have been used in this project. The names are linked to one of the developers home page for the library.
 
@@ -110,6 +111,23 @@ The website *ChairMaker* is able to simulate and create DFA-files for chair prod
 If the values in the parameters are valid, the user will be directed to a *order page* where it will be possible to view the chair and download the corresponding DFA file.
 
 We have chosen only three changeable parameters on each chair. This reduced the amount of nearly identical lines of code and freed up time to work on other functionality, like the 3D preview.
+
+## Examples
+### Dining chair example
+ChairMaker             |  Order				|	Siemens NX
+:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/aspleym/TMM4275-Assignment-1/blob/main/images/dTest/ChairMaker.PNG)  |  ![](https://github.com/aspleym/TMM4275-Assignment-1/blob/main/images/dTest/Order.PNG) |  ![](https://github.com/aspleym/TMM4275-Assignment-1/blob/main/images/dTest/NX.PNG)
+
+### Stool chair example
+ChairMaker             |  Order				|	Siemens NX
+:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/aspleym/TMM4275-Assignment-1/blob/main/images/sTest/ChairMaker.PNG)  |  ![](https://github.com/aspleym/TMM4275-Assignment-1/blob/main/images/sTest/Order.PNG) |  ![](https://github.com/aspleym/TMM4275-Assignment-1/blob/main/images/sTest/NX.PNG)
+
+### Modern chair example
+ChairMaker             |  Order				|	Siemens NX
+:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/aspleym/TMM4275-Assignment-1/blob/main/images/mTest/ChairMaker.PNG)  |  ![](https://github.com/aspleym/TMM4275-Assignment-1/blob/main/images/mTest/Order.PNG) |  ![](https://github.com/aspleym/TMM4275-Assignment-1/blob/main/images/mTest/NX.PNG)
+
 ## Roadmap
 
 We have no further plans for this school project. Until there are changes to our roadmap, this project will have no maintenance of the code as of 19. February 2021.
