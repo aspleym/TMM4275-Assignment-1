@@ -39,6 +39,8 @@ You have founded a company implementing KBE systems for various manufacturers. T
 
 ![image of client-server architecture](https://github.com/aspleym/TMM4275-Assignment-1/blob/main/images/Client-server%20architecture.png)
 
+![image of sequence diagram](https://github.com/aspleym/TMM4275-Assignment-1/blob/main/images/Sequence%20diagram.png)
+
 ### Built With
 
 Everyone that contributed to the project used [Visual Studio Code](https://code.visualstudio.com/) to develop this software. The next section has a list of libraries and applications that have been used in this project. The names are linked to one of the developers home page for the library.
