@@ -1,0 +1,62 @@
+#! NX/KF 4.0
+DefClass:mTest (%ug_create_instance ug_base_part);
+# Set of default parameters for the part
+# Leg parameters
+(Number Parameter) leg_length: 100.0 * 10;
+(Number Parameter) leg_width: 40.0 * 10;
+(Number Parameter) leg_height: 100.0 * 10;
+
+# Seat parameters
+(Number Parameter) seat_height: 50.0 * 10;
+(Number Parameter) seat_width: 120.0 * 10;
+(Number Parameter) seat_length: 100.0 * 10;
+
+# Back parameters
+(Number Parameter) back_height: 50.0 * 10;
+(Number Parameter) back_width: 120.0 * 10;
+(Number Parameter) back_length: 20.0 * 10;
+
+# Basic building elements to form a structure
+
+# The seat
+(Child) seat: 
+{
+    class, ug_block;
+    length, seat_length:;
+    width, seat_width:;
+    height, seat_height:;
+    Origin, Point(0, leg_width:, 0);
+};
+
+# The back
+(Child) back:
+{
+  class, ug_block;
+  length, back_length:;
+  width, back_width:;
+  height, back_height:;
+  Origin, Point(0, leg_width:, seat_height:);
+};
+
+# Left leg
+(Child) leftLeg:
+{
+  class, ug_block;
+  length, leg_length:;
+  width, leg_width:;
+  height, leg_height:;
+  Origin, Point(0, 0, 0);
+};
+
+# Right leg
+(Child) rightLeg:
+{
+  class, ug_block;
+  length, leg_length:;
+  width, leg_width:;
+  height, leg_height:;
+  Origin, Point(0, leg_width: + seat_width:, 0);
+};
+
+
+
