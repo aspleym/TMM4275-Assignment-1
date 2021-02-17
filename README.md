@@ -129,11 +129,11 @@ TMM4275-Assignment-1
 │   └───js					JavaScript files to visualize the Chair in 3d
 │           dining_chair.js			Script to build a dining chair in Three.js.
 │           modern_chair.js			Script to build a modern chair in Three.js.
-│           OrbitControls.js			Camera controll
+│           OrbitControls.js			Camera controll.
 │           order.js				JavaScript for order page.
-│           preview.js				Preview script
+│           preview.js				Preview script.
 │           stool_chair.js			Script to build a stool chair in Three.js.
-│           three.js				The Three.js library
+│           three.js				The Three.js library.
 │           three.min.js			Support file for Three.js
 │           three.module.js			Support file for Three.js
 │
@@ -145,7 +145,7 @@ TMM4275-Assignment-1
 │   ├───owl-files
 │   │       shapes.owl				The OWL model.
 │
-├───images					Images for the README
+├───images					Images for the README.
 │       Client-server architecture.png
 │       ui.png
 │
