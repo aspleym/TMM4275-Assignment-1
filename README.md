@@ -108,6 +108,8 @@ python httpserver.py
 The website *ChairMaker* is able to simulate and create DFA-files for chair products of three types. Dining-, stool- and modern chair. These different types of chairs have some parameters that can be changed and visualized in a preview window before *ordering* the DFA file.
 
 If the values in the parameters are valid, the user will be directed to a *order page* where it will be possible to view the chair and download the corresponding DFA file.
+
+We have chosen only three changeable parameters on each chair. This reduced the amount of nearly identical lines of code and freed up time to work on other functionality, like the 3D preview.
 ## Roadmap
 
 We have no further plans for this school project. Until there are changes to our roadmap, this project will have no maintenance of the code as of 19. February 2021.
