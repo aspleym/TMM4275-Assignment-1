@@ -115,49 +115,49 @@ This is an overview of the file structure for this repository and a short explan
 
 ```
 TMM4275-Assignment-1
-│   .gitignore					      A file to tell Github to ignore files.
-│   httpserver.py				      httpserver.py: Python script to execute a http server for the customer.
-│   queries.txt					      A txt file with examples of queries in SPARQL.
-│   README.md					        This file.
+│   .gitignore					A file to tell Github to ignore files.
+│   httpserver.py				httpserver.py: Python script to execute a http server for the customer.
+│   queries.txt					A txt file with examples of queries in SPARQL.
+│   README.md					This file.
 │
 ├───ChairMaker
-│   │   index.html			      Main HTML file with fields to recieve chair paramters and a 3d preview with three.js.
-│   │   main.css				      CSS for styling of the index.html file.
-│   │   order.css				      CSS for styling of the order.html file.
-│   │   order.html				    Order HTML file where you see final preview and a download link for the DFA file.
+│   │   index.html				Main HTML file with fields to recieve chair paramters and a 3d preview with three.js.
+│   │   main.css				CSS for styling of the index.html file.
+│   │   order.css				CSS for styling of the order.html file.
+│   │   order.html				Order HTML file where you see final preview and a download link for the DFA file.
 │   │
-│   └───js						        JavaScript files to visualize the Chair in 3d
-│           dining_chair.js		Script to build a dining chair in Three.js.
-│           modern_chair.js	  Script to build a modern chair in Three.js.
-│           OrbitControls.js	Camera controll
-│           order.js			    JavaScript for order page.
-│           preview.js			  Preview script
-│           stool_chair.js    Script to build a stool chair in Three.js.
-│           three.js			    The Three.js library
-│           three.min.js		  Support file for Three.js
-│           three.module.js		Support file for Three.js
+│   └───js					JavaScript files to visualize the Chair in 3d
+│           dining_chair.js			Script to build a dining chair in Three.js.
+│           modern_chair.js			Script to build a modern chair in Three.js.
+│           OrbitControls.js			Camera controll
+│           order.js				JavaScript for order page.
+│           preview.js				Preview script
+│           stool_chair.js			Script to build a stool chair in Three.js.
+│           three.js				The Three.js library
+│           three.min.js			Support file for Three.js
+│           three.module.js			Support file for Three.js
 │
-├───fuseki-server				      Fuseki server files to execute the server.
+├───fuseki-server				Fuseki server files to execute the server.
 │   │   fuseki-server
 │   │   fuseki-server.bat
 │   │   fuseki-server.jar
 │   │   
 │   ├───owl-files
-│   │       shapes.owl			  The OWL model.
+│   │       shapes.owl				The OWL model.
 │
-├───images						        Images for the README
+├───images					Images for the README
 │       Client-server architecture.png
 │       ui.png
 │
-├───products					        A folder to store chair DFA files.
-│   └───templates				      Templates for different chair types as a DFA file.
+├───products					A folder to store chair DFA files.
+│   └───templates				Templates for different chair types as a DFA file.
 │           diningChair.dfa
 │           modernChair.dfa
 │           stoolChair.dfa
 │
 └───py
-    │   fusekiposter.py			  The Python file that contains functions to post chairs to the Fuseki server.
-    │   generateDFA.py			  Functions to generate DFA files of chairs.
+    │   fusekiposter.py				The Python file that contains functions to post chairs to the Fuseki server.
+    │   generateDFA.py				Functions to generate DFA files of chairs.
 ```
 ## Contributors
 
