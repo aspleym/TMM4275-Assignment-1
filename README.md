@@ -84,15 +84,6 @@ In this section you will be guided step by step on how to run the system on your
 cd /to-project-directory
 
 ```
-- A new window should open. Click on the folder named `Git`, select `Projects from Git` and hit the button named `Next >`.
-- Select: `Existing local repository` and proceed by pressing the `Next >` button.
-- There should be a button with the name `Add...` to add a git repository.
-  - Another window will pop up. Type in the path to the git project's directory, or use the `Browse...` button to find the path.
-  - In the search results, check the box for the git project you want to add to your workspace. The directory should look something like `/you-directory/TDT4250Project/.git`.
-  - Press the `Finish` button to close the window, and the `Next >` button to proceed.
-- You should now see how the working tree will look like when you import the project. No changes should be needed, proceed by clicking the `Next >` button.
-- The next window will show you the different projects that will be added to the workspace. Just hit the `Finish` button to finalize the import.
-- The Project should now be imported into Eclipse and you can view each bundle in the _Package Explorer_.
 
 ## Usage
 
