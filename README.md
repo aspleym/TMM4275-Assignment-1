@@ -11,14 +11,15 @@
 [![](https://img.shields.io/badge/Three.js-a?style=flat&logo=three.js&label=Library&color=000000&logoColor=ffffff)](https://threejs.org/)
 [![](https://img.shields.io/badge/NX-a?style=flat&logo=siemens&label=CAD&color=009999&logoColor=ffffff)](https://www.plm.automation.siemens.com/global/en/products/nx/)
 [![](https://img.shields.io/badge/Fuseki-a?style=flat&logo=apache&label=Server&color=D22128&logoColor=ffffff)](https://jena.apache.org/documentation/fuseki2/index.html)  
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![](https://img.shields.io/maintenance/no/2021)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
 
 - [Task](#taskl)
-  - [Built With](#built-with)
-    - [Libraries](#libraries)
+- [Sketch and diagrams](#sketch-and-diagrams)
+- [Built With](#built-with)
+  - [Libraries](#libraries)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Download project](#download-project)
@@ -33,7 +34,7 @@
 
 You have founded a company implementing KBE systems for various manufacturers. This time you have received an offer to build the KBE for the factory making furniture. In particular, a parametric design of a chair shall be made. Customers should be able to define the “sizes”/”shapes” of different elements of the chair and observe the result as well as if it is possible to make. Customer wishes should be checked with the capabilities at the production floor.
 
-## Sketch and architecture
+## Sketch and diagrams
 ![image of ui example](https://github.com/aspleym/TMM4275-Assignment-1/blob/main/images/ui.png)
 
 ![image of client-server architecture](https://github.com/aspleym/TMM4275-Assignment-1/blob/main/images/Client-server%20architecture.png)
