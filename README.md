@@ -16,7 +16,7 @@
 
 ## Table of Contents
 
-- [Task](#taskl)
+- [Task](#task)
 - [Sketch and diagrams](#sketch-and-diagrams)
 - [Built With](#built-with)
   - [Libraries](#libraries)
@@ -112,6 +112,8 @@ If the values in the parameters are valid, the user will be directed to a *order
 
 We have chosen only three changeable parameters on each chair. This reduced the amount of nearly identical lines of code and freed up time to work on other functionality, like the 3D preview.
 
+Manufacturer constraints must be set before using the web application. This can be done by clicking on the *Go to manufacturer* button.
+
 ## Examples
 ### Dining chair example
 ChairMaker             |  Order				|	Siemens NX
@@ -146,6 +148,7 @@ TMM4275-Assignment-1
 ├───ChairMaker
 │   │   index.html				Main HTML file with fields to recieve chair paramters and a 3d preview with three.js.
 │   │   main.css				CSS for styling of the index.html file.
+│   │   manufacturer.html			HTML file for the manufacturer page.
 │   │   order.css				CSS for styling of the order.html file.
 │   │   order.html				Order HTML file where you see final preview and a download link for the DFA file.
 │   │
@@ -155,6 +158,7 @@ TMM4275-Assignment-1
 │           OrbitControls.js			Camera controll.
 │           order.js				JavaScript for order page.
 │           preview.js				Preview script.
+│	    constraintsLoader.js		This file loads manufacturer constraints from the server.	
 │           stool_chair.js			Script to build a stool chair in Three.js.
 │           three.js				The Three.js library.
 │           three.min.js			Support file for Three.js
