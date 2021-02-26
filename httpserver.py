@@ -1,4 +1,5 @@
 import http.server
+import json
 from py.generateDFA import generateDiningChair, generateStoolChair, generateModernChair
 from py.fusekiposter import postDiningChair, postModernChair, postStoolChair
 import socketserver
@@ -13,6 +14,26 @@ class MyRequestHandler(http.server.SimpleHTTPRequestHandler):
         # Redirects to main page
         if self.path == '/':
             self.path = '/ChairMaker/index.html'
+        elif self.path.find('/chairConstraints') != -1:
+
+            dChairL = generateDiningChair("dCConstL", False)
+            dChairU = generateDiningChair("dCConstU", False)
+
+            sChairL = generateStoolChair("sCConstL", False)
+            sChairU = generateStoolChair("sCConstU", False)
+
+            mChairL = generateModernChair("mCConstL", False)
+            mChairU = generateModernChair("mCConstU", False)
+
+            x = f'{{\"dCConstL\" : {dChairL}, \"dCConstU\" : {dChairU}, \"sCConstL\" : {sChairL}, \"sCConstU\" : {sChairU}, \"mCConstL\" : {mChairL}, \"mCConstU\" : {mChairU}}}'
+
+            self.send_response(200)
+            self.send_header("Content-type", "text/plain; charset=utf-8")
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(bytes(x, "utf-8"))
+            return None
+
         # Response to order.html http request
         elif self.path.find('/info') != -1:
             # Get chair name from url param
@@ -26,11 +47,11 @@ class MyRequestHandler(http.server.SimpleHTTPRequestHandler):
             data = ""
 
             if (chairType == "diningChair"):
-                data = generateDiningChair(pname)
+                data = generateDiningChair(pname, True)
             elif (chairType == "stoolChair"):
-                data = generateStoolChair(pname)
+                data = generateStoolChair(pname, True)
             elif (chairType == "modernChair"):
-                data = generateModernChair(pname)
+                data = generateModernChair(pname, True)
 
             self.send_response(200)
             self.send_header("Content-type", "text/plain; charset=utf-8")
@@ -44,13 +65,61 @@ class MyRequestHandler(http.server.SimpleHTTPRequestHandler):
     def do_POST(self):
         content_len = int(self.headers['Content-Length'])
         post_body = self.rfile.read(content_len)
-        self.path = '/ChairMaker/order.html?test'
 
         post_string = post_body.decode('utf-8')
         parameters = post_string.split("&")
         chairType = parameters[0].split("=")[0]
 
-        if (chairType == "dCName"):
+        if (chairType == "dCConst"):
+            # DINING LOWER CONSTRAINT
+            width = parameters[5].split("=")[1]
+            length = parameters[3].split("=")[1]
+            height = parameters[1].split("=")[1]
+
+            response = postDiningChair("dCConstL", float(
+                width), float(length), float(height))
+
+            # DINING UPPER CONSTRAINT
+            width = parameters[6].split("=")[1]
+            length = parameters[4].split("=")[1]
+            height = parameters[2].split("=")[1]
+
+            response = postDiningChair("dCConstU", float(
+                width), float(length), float(height))
+
+        elif (chairType == "sCConst"):
+            # STOOL LOWER CONSTRAINT
+            diameter = parameters[3].split("=")[1]
+            height = parameters[1].split("=")[1]
+
+            response = postStoolChair(
+                "sCConstL", float(diameter), float(height))
+
+            # STOOL UPPER CONSTRAINT
+            diameter = parameters[4].split("=")[1]
+            height = parameters[2].split("=")[1]
+
+            response = postStoolChair(
+                "sCConstU", float(diameter), float(height))
+
+        elif (chairType == "mCConst"):
+            # MODERN LOWER CONSTRAINT
+            width = parameters[5].split("=")[1]
+            length = parameters[3].split("=")[1]
+            height = parameters[1].split("=")[1]
+
+            response = postModernChair("mCConstL", float(
+                width), float(length), float(height))
+
+            # MODERN UPPER CONSTRAINT
+            width = parameters[6].split("=")[1]
+            length = parameters[4].split("=")[1]
+            height = parameters[2].split("=")[1]
+
+            response = postModernChair("mCConstU", float(
+                width), float(length), float(height))
+
+        elif (chairType == "dCName"):
             # DINING
             pname = parameters[0].split("=")[1]
             width = parameters[3].split("=")[1]

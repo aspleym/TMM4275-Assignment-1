@@ -3,7 +3,7 @@ import requests
 import json
 
 
-def generateDiningChair(pname):
+def generateDiningChair(pname, dfa):
 
     # Defining a http request for getting a specific dining chair
 
@@ -55,19 +55,20 @@ def generateDiningChair(pname):
 
     # Writing to the correct location
 
-    rel_path_product = f'products/{pname}.dfa'
-    abs_file_path_product = os.path.join(
-        script_dir[:len(script_dir) - 3], rel_path_product)
+    if (dfa):
+        rel_path_product = f'products/{pname}.dfa'
+        abs_file_path_product = os.path.join(
+            script_dir[:len(script_dir) - 3], rel_path_product)
 
-    f = open(abs_file_path_product, "w")
-    f.write(txt)
-    f.close()
+        f = open(abs_file_path_product, "w")
+        f.write(txt)
+        f.close()
 
     data['results']['bindings'][0]['pname'] = pname
     return json.dumps(data['results']['bindings'][0])
 
 
-def generateStoolChair(pname):
+def generateStoolChair(pname, dfa):
     # Defining a http request for getting a specific stool chair
 
     headers = {
@@ -112,19 +113,20 @@ def generateStoolChair(pname):
     txt = txt.replace("<SEAT_DIAMETER>", seat_diameter)
 
     # Writing to the correct location
-    rel_path_product = f'products/{pname}.dfa'
-    abs_file_path_product = os.path.join(
-        script_dir[:len(script_dir) - 3], rel_path_product)
+    if (dfa):
+        rel_path_product = f'products/{pname}.dfa'
+        abs_file_path_product = os.path.join(
+            script_dir[:len(script_dir) - 3], rel_path_product)
 
-    f = open(abs_file_path_product, "w")
-    f.write(txt)
-    f.close()
+        f = open(abs_file_path_product, "w")
+        f.write(txt)
+        f.close()
 
     data['results']['bindings'][0]['pname'] = pname
     return json.dumps(data['results']['bindings'][0])
 
 
-def generateModernChair(pname):
+def generateModernChair(pname, dfa):
 
     # Defining a http request for getting a specific dining chair
 
@@ -177,14 +179,14 @@ def generateModernChair(pname):
     txt = txt.replace("<BACK_LENGTH>", back_length)
 
     # Writing to the correct location
+    if (dfa):
+        rel_path_product = f'products/{pname}.dfa'
+        abs_file_path_product = os.path.join(
+            script_dir[:len(script_dir) - 3], rel_path_product)
 
-    rel_path_product = f'products/{pname}.dfa'
-    abs_file_path_product = os.path.join(
-        script_dir[:len(script_dir) - 3], rel_path_product)
-
-    f = open(abs_file_path_product, "w")
-    f.write(txt)
-    f.close()
+        f = open(abs_file_path_product, "w")
+        f.write(txt)
+        f.close()
 
     data['results']['bindings'][0]['pname'] = pname
     return json.dumps(data['results']['bindings'][0])

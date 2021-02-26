@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/ChairMaker/main.css" />
+    <title>ChairMaker</title>
+  </head>
+  <body>
+    <div>
+      <div class="header">
+        <div class="logo">
+          <div
+            style="
+              background-color: #008cff;
+              width: 4vw;
+              height: 5vh;
+              border-radius: 10px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <h1 style="color: white">CM</h1>
+          </div>
+          <h2 style="text-align: left; color: #008cff; margin-left: 1vw">
+            ChairMaker - Manufacturer constraints
+          </h2>
+        </div>
+      </div>
+      <div class="content">
+        <div class="mainContent">
+          <div class="select">
+            <select name="chairType" id="chairType">
+              <option value="" selected>Please select chair type...</option>
+              <option value="diningChair">Dining Chair</option>
+              <option value="stoolChair">Stool Chair</option>
+              <option value="modernChair">Modern Chair</option>
+            </select>
+          </div>
+          <div id="diningForm" class="form" style="display: none">
+            <form
+              action="/ChairMaker/manufacturer.html?dCCons"
+              id="dCForm"
+              method="POST"
+            >
+              <input
+                type="text"
+                id="dCConst"
+                name="dCConst"
+                value="dCConst"
+                style="display: none"
+              />
+              <label for="dCHeight">Height constraints (cm):</label>
+              <div style="display: flex; align-items: center">
+                <input
+                  type="number"
+                  id="dCHeightL"
+                  name="dCHeightL"
+                  value="100"
+                  required
+                  min="1"
+                  max="100"
+                />
+                -
+                <input
+                  type="number"
+                  id="dCHeightU"
+                  name="dCHeightU"
+                  value="100"
+                  required
+                  min="100"
+                  max="10000"
+                />
+              </div>
+
+              <label for="dCLength">Length constraints (cm):</label>
+              <div style="display: flex; align-items: center">
+                <input
+                  type="number"
+                  id="dCLengthL"
+                  name="dCLengthL"
+                  value="100"
+                  required
+                  min="1"
+                  max="100"
+                />
+                -
+                <input
+                  type="number"
+                  id="dCLengthU"
+                  name="dCLengthU"
+                  value="100"
+                  required
+                  min="100"
+                  max="10000"
+                />
+              </div>
+
+              <label for="dCWidth">Width constraints (cm):</label>
+              <div style="display: flex; align-items: center">
+                <input
+                  type="number"
+                  id="dCWidthL"
+                  name="dCWidthL"
+                  value="100"
+                  required
+                  min="1"
+                  max="100"
+                />
+                -
+                <input
+                  type="number"
+                  id="dCWidthU"
+                  name="dCWidthU"
+                  value="100"
+                  required
+                  min="100"
+                  max="10000"
+                />
+              </div>
+
+              <button type="submit" value="Submit">Order</button>
+            </form>
+          </div>
+          <div id="stoolForm" class="form" style="display: none">
+            <form
+              action="/ChairMaker/manufacturer.html?sCCons"
+              id="sCForm"
+              method="POST"
+            >
+              <input
+                type="text"
+                id="sCConst"
+                name="sCConst"
+                value="sCConst"
+                style="display: none"
+              />
+              <label for="sCHeight">Height constraints (cm):</label>
+              <div style="display: flex; align-items: center">
+                <input
+                  type="number"
+                  id="sCHeightL"
+                  name="sCHeightL"
+                  value="100"
+                  required
+                  min="1"
+                  max="100"
+                />
+                -
+                <input
+                  type="number"
+                  id="sCHeightU"
+                  name="sCHeightU"
+                  value="100"
+                  required
+                  min="100"
+                  max="10000"
+                />
+              </div>
+
+              <label for="sCDiam">Diameter constraints (cm):</label>
+              <div style="display: flex; align-items: center">
+                <input
+                  type="number"
+                  id="sCDiamL"
+                  name="sCDiamL"
+                  value="100"
+                  required
+                  min="1"
+                  max="100"
+                />
+                -
+                <input
+                  type="number"
+                  id="sCDiamU"
+                  name="sCDiamU"
+                  value="100"
+                  required
+                  min="100"
+                  max="10000"
+                />
+              </div>
+
+              <button type="submit" value="Submit">Order</button>
+            </form>
+          </div>
+          <div id="modernForm" class="form" style="display: none">
+            <form
+              action="/ChairMaker/manufacturer.html?mCCons"
+              method="POST"
+              id="mCForm"
+            >
+              <input
+                type="text"
+                id="mCConst"
+                name="mCConst"
+                value="mCConst"
+                style="display: none"
+              />
+              <label for="mCHeight">Height constraints (cm):</label>
+              <div style="display: flex; align-items: center">
+                <input
+                  type="number"
+                  id="mCHeightL"
+                  name="mCHeightL"
+                  value="100"
+                  required
+                  min="1"
+                  max="100"
+                />
+                -
+                <input
+                  type="number"
+                  id="mCHeightU"
+                  name="mCHeightU"
+                  value="100"
+                  required
+                  min="100"
+                  max="10000"
+                />
+              </div>
+
+              <label for="mCLength">Length constraints (cm):</label>
+              <div style="display: flex; align-items: center">
+                <input
+                  type="number"
+                  id="mCLengthL"
+                  name="mCLengthL"
+                  value="100"
+                  required
+                  min="1"
+                  max="100"
+                />
+                -
+                <input
+                  type="number"
+                  id="mCLengthU"
+                  name="mCLengthU"
+                  value="100"
+                  required
+                  min="100"
+                  max="10000"
+                />
+              </div>
+
+              <label for="mCWidth">Width constraints (cm):</label>
+              <div style="display: flex; align-items: center">
+                <input
+                  type="number"
+                  id="mCWidthL"
+                  name="mCWidthL"
+                  value="100"
+                  required
+                  min="1"
+                  max="100"
+                />
+                -
+                <input
+                  type="number"
+                  id="mCWidthU"
+                  name="mCWidthU"
+                  value="100"
+                  required
+                  min="100"
+                  max="10000"
+                />
+              </div>
+
+              <button type="submit" value="Submit">Update</button>
+            </form>
+          </div>
+          <p id="message"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    // Script for select box
+    var select = document.getElementById("chairType");
+
+    var dCForm = document.getElementById("dCForm");
+    var sCForm = document.getElementById("sCForm");
+    var mCForm = document.getElementById("mCForm");
+
+    dCForm.onchange = function () {
+      var hL = document.getElementById("dCHeightL");
+      var hU = document.getElementById("dCHeightU");
+
+      hL.max = hU.value;
+      hU.min = hL.value;
+
+      var lL = document.getElementById("dCLengthL");
+      var lU = document.getElementById("dCLengthU");
+
+      lL.max = lU.value;
+      lU.min = lL.value;
+
+      var wL = document.getElementById("dCWidthL");
+      var wU = document.getElementById("dCWidthU");
+
+      wL.max = wU.value;
+      wU.min = wL.value;
+    };
+
+    sCForm.onchange = function () {
+      var hL = document.getElementById("sCHeightL");
+      var hU = document.getElementById("sCHeightU");
+
+      hL.max = hU.value;
+      hU.min = hL.value;
+
+      var dL = document.getElementById("sCDiamL");
+      var dU = document.getElementById("sCDiamU");
+
+      dL.max = dU.value;
+      dU.min = dL.value;
+    };
+
+    mCForm.onchange = function () {
+      var hL = document.getElementById("mCHeightL");
+      var hU = document.getElementById("mCHeightU");
+
+      hL.max = hU.value;
+      hU.min = hL.value;
+
+      var lL = document.getElementById("mCLengthL");
+      var lU = document.getElementById("mCLengthU");
+
+      lL.max = lU.value;
+      lU.min = lL.value;
+
+      var wL = document.getElementById("mCWidthL");
+      var wU = document.getElementById("mCWidthU");
+
+      wL.max = wU.value;
+      wU.min = wL.value;
+    };
+
+    select.onchange = function () {
+      var diningForm = document.getElementById("diningForm");
+      var stoolForm = document.getElementById("stoolForm");
+      var modernForm = document.getElementById("modernForm");
+      diningForm.style.display = this.value == "diningChair" ? "block" : "none";
+      stoolForm.style.display = this.value == "stoolChair" ? "block" : "none";
+      modernForm.style.display = this.value == "modernChair" ? "block" : "none";
+    };
+  </script>
+</html>
