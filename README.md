@@ -112,7 +112,7 @@ If the values in the parameters are valid, the user will be directed to a *order
 
 We have chosen only three changeable parameters on each chair. This reduced the amount of nearly identical lines of code and freed up time to work on other functionality, like the 3D preview.
 
-Manufacturer constraints must be set before using the web application. This can be done by clicking on the *Go to manufacturer* button.
+Manufacturer constraints must be set before using the web application. This can be done by clicking on the ***Go to manufacturer*** button.
 
 ## Examples
 ### Dining chair example
